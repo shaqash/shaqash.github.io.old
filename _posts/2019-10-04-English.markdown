@@ -1,19 +1,9 @@
 ---
-categories: first new
-title: עברית
-author: asdd
+categories: blog
+title: Welcome
+author: Shaked Ashkenazi
 date: 4/10/2019 20:18
-direction: rtl
-align: right
 ---
 
-nsuiadna\
-* sad
-* sad
-
-
-```javascript
-function a = () => {
-  console.log('asd');
-}
-```
+Welcome to my website.
+This is the first article in my blog
