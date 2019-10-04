@@ -1,0 +1,26 @@
+<div class="side-panel">
+  <img 
+    class="rounded-circle m-3"
+    src="{{ site.img_url }}"
+    height="128px"
+  >
+  <h3 class="author">{{ site.author | default: "AUTHOR" }}</h3>
+  <h5>{{ site.sub_title | default: "Developer"}}</h5>
+  <ul class="nav justify-content-center social">
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/{{ site.social_links.github }}">
+        <i class="fa fa-github"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://www.linkedin.com/{{ site.social_links.linkedIn }}">
+        <i class="fa fa-linkedin-square"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{{ site.social_links.rss }}">
+        <i class="fa fa-rss"></i>
+      </a>
+    </li>
+  </ul>
+</div>

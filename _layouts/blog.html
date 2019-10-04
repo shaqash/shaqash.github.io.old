@@ -1,0 +1,40 @@
+---
+layout: page
+---
+<h3>
+  <a href="/">
+    <i class="fa fa-home"></i>
+  </a>
+</h3>
+
+{{content}}
+
+<p class="feed-subscribe">
+  <a href="{{ 'feed.xml' | relative_url }}">
+    <i class="fa fa-rss" style="color: orange;"></i>
+    <small>Subscribe to RSS</small>
+  </a>
+</p>
+
+{%- if site.posts.size > 0 -%}
+{% for post in site.posts %}
+<section style="text-align: {{ post.align }}; direction: {{ post.direction }}">
+  <h3>
+    <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>
+      {{ post.title }}
+    </a>
+    {%- for tag in post.categories -%}
+    <span class="badge badge-light mr-2">
+      {{tag}}
+    </span>
+  {%- endfor -%}
+  </h3>
+  {%- assign date_format = "%b %-d, %Y" -%}
+  <span style="text-align: left;">{{ post.date | date: date_format }}</span>
+  <p>{{ post.excerpt | strip_html | truncate: 250 }}</p>
+  <hr />
+</section>       
+{% endfor %}
+{% else %}
+<p>Empty :/</p>
+{%- endif -%}

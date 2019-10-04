@@ -1,0 +1,42 @@
+---
+layout: page
+---
+{{ content }}
+
+<hr class="d-none">
+
+{%- if site.posts.size > 0 -%}
+<h3 name="posts" class="section-header">-RECENT POSTS-</h3>
+<small>
+  <p>
+    <a href="/blog">Check out all posts</a>
+    /
+    <a href="{{ 'feed.xml' | relative_url }}">
+      <span>Subscribe</span>
+      <i class="fa fa-rss" style="color: orange;"></i>
+    </a>
+  </p>
+</small>
+{% for post in site.posts limit: 3 %}
+<section style="text-align: {{ post.align }}; direction: {{ post.direction }}">
+  <h3>
+    <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>
+      {{ post.title }}
+    </a>
+    {%- for tag in post.categories -%}
+    <span class="badge badge-light mr-2">
+      {{tag}}
+    </span>
+  {%- endfor -%}
+  </h3>
+  {%- assign date_format = "%b %-d, %Y" -%}
+  <span style="text-align: left;">{{ post.date | date: date_format }}</span>
+  <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+</section>       
+{% endfor %}
+{%- endif -%}
+
+<h3 name="projects" class="section-header">-STARRED PROJECTS-</h3>
+<section id="github"></section>
+<script src="assets/js/renderer.js"></script>
+<script src="assets/js/github.js"></script>

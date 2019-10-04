@@ -1,0 +1,19 @@
+---
+categories: first new
+title: עברית
+author: asdd
+date: 4/10/2019 20:18
+direction: rtl
+align: right
+---
+
+nsuiadna\
+* sad
+* sad
+
+
+```javascript
+function a = () => {
+  console.log('asd');
+}
+```
