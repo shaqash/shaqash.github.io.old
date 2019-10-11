@@ -1,13 +1,24 @@
 @import "ext/_solarized-highlight";
 
 body {
-  font-family: Cantarell,Segoe UI,Helvetica,Arial,sans-serif; 
+  font-family: Cantarell, Segoe UI, Helvetica, Arial, sans-serif;
   font-size: 1.2rem;
   font-weight: 350;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -23,7 +34,7 @@ body {
 section {
   margin-bottom: 15px;
   p {
-    font-size:1.1rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -54,6 +65,12 @@ section {
   text-align: center;
   .nav-link {
     display: block;
-    padding: .5rem .7rem;
+    padding: 0.5rem 0.7rem;
   }
+}
+
+pre {
+  text-align: left !important;
+  direction: ltr !important;
+  padding: 1rem;
 }
