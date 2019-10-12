@@ -19,7 +19,7 @@ layout: page
 </small>
 {% for post in site.posts limit: 3 %}
 <section style="text-align: {{ post.align }}; direction: {{ post.direction }}">
-  <h3>
+  <h4>
     <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>
       {{ post.title }}
     </a>
@@ -28,7 +28,7 @@ layout: page
       {{tag}}
     </span>
   {%- endfor -%}
-  </h3>
+  </h4>
   {%- assign date_format = "%b %-d, %Y" -%}
   <span style="text-align: left;">{{ post.date | date: date_format }}</span>
   <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
