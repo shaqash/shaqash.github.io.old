@@ -1,27 +1,28 @@
 ---
 layout: page
 ---
-<h3>
-  <a href="/"><i class="fa fa-home"></i></a>
+<div class="ui large breadcrumb">
+  <a class="section" href="/"><i class="home icon"></i>Home</a>
   {%- for tag in page.categories -%}
-  <span style="font-size: 1.1rem;">
-    >
-    {{tag}}
-  </span>
+  <div class="divider"> / </div>
+  <a class="section">{{tag}}</a>
   {%- endfor -%}
-</h3>
-<article class="post" style="direction: {{ page.direction }}; text-align: {{ page.align }}">
+</div>
+<article 
+  class="ui padded basic segment" 
+  style="direction: {{ page.direction }}; text-align: {{ page.align }}"
+>
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | escape }}</h1>
+  <header>
+    <h1 class="ui header">{{ page.title | escape }}
+      <div class="sub header">
+        {%- assign date_format = "%b %-d, %Y" -%}
+        <i>Published at: {{ page.date | date: date_format }}</i>
+      </div>
+    </h1>
   </header>
-
-  <div class="post-meta">
-    {%- assign date_format = "%b %-d, %Y" -%}
-    <i>Published at: {{ page.date | date: date_format }}</i>
-  </div>
   
-  <div class="post-content">
+  <div>
     {{ content }}
   </div>
 

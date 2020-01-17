@@ -1,12 +1,14 @@
 ---
 layout: default
 ---
-<div class="row">
-  <div class="col-lg-4">
+<div class="ui stackable two column grid">
+  <div class="center aligned four wide column">
     {%- include side.html -%}
-    <hr class="d-lg-none">
+    <!-- <hr class="d-lg-none"> -->
   </div>
-  <div class="col-lg-8">
-    {{ content }}
+  <div class="twelve wide column">
+    <div class="ui raised padded text segment">
+      {{ content }}
+    </div>
   </div>
 </div>

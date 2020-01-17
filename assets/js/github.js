@@ -2,13 +2,17 @@ const user = 'shaqash';
 const url = `https://api.github.com/users/${user}`;
 
 async function fetchProjects() {
-  const projects = await fetch(url+'/starred')
-    .then(data => data.json())                // Convert to JSON
-    .then(json => json.filter(repoFilter))    // Filter by owner = me
-    .then(filtered => filtered.map(repoMap)); // Map only required fields
-  const list = makeList(projects);
-  const section  = document.getElementById('github');
-  section.insertAdjacentHTML('afterbegin', list);
+  let projects = sessionStorage.getItem('shaq.starred');
+  if (!projects) {
+    projects = await fetch(url + '/starred')
+      .then(data => data.json())                // Convert to JSON
+      .then(json => json.filter(repoFilter))    // Filter by owner = me
+      .then(filtered => filtered.map(repoMap)); // Map only required fields
+    sessionStorage.setItem('shaq.starred', JSON.stringify(projects))
+  } else {
+    projects = JSON.parse(projects);
+  }
+  return projects;
 }
 
 repoMap = p => ({
@@ -22,14 +26,28 @@ repoMap = p => ({
 repoFilter = p => p.owner.login === user;
 
 async function fetchUserData() {
-  const user = await fetch(url)
-    .then(json => json.json());
-    const repoCount = document.getElementById('github');
-    repoCount.insertAdjacentHTML('beforeend', 
-      makeTag('small', `Public repos count: ${makeBadge(user.public_repos)}`));
-    repoCount.insertAdjacentHTML('beforeend', 
-      makeTag('small', `Public gists count: ${makeBadge(user.public_gists)}`));
+  let user = sessionStorage.getItem('shaq.userdata');
+  if (!user) {
+    user = await fetch(url)
+      .then(json => json.json());
+    sessionStorage.setItem('shaq.userdata', JSON.stringify(user))
+  } else {
+    user = JSON.parse(user);
   }
+  return user;
+}
 
-fetchUserData();
-fetchProjects();
+async function renderGithub() {
+  const section = document.getElementById('github');
+  const userdata = await fetchUserData();
+  const header = makeHeader('GITHUB', `
+    Public repos count: ${userdata.public_repos}
+    Public gists count: ${userdata.public_gists}
+  `);
+  const projects = await fetchProjects();
+  const list = makeList(projects);
+  section.insertAdjacentHTML('beforebegin', header);
+  section.insertAdjacentHTML('afterbegin', list);
+}
+
+renderGithub();

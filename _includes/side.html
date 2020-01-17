@@ -1,26 +1,17 @@
-<div class="side-panel">
-  <img 
-    class="rounded-circle m-3"
-    src="{{ site.img_url }}"
-    height="128px"
-  >
-  <h3 class="author">{{ site.author | default: "AUTHOR" }}</h3>
-  <h5>{{ site.sub_title | default: "Developer"}}</h5>
-  <ul class="nav justify-content-center social">
-    <li class="nav-item">
-      <a class="nav-link" href="https://github.com/{{ site.social_links.github }}">
-        <i class="fa fa-github"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="https://www.linkedin.com/in/{{ site.social_links.linkedin }}">
-        <i class="fa fa-linkedin-square"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{{ site.social_links.rss }}">
-        <i class="fa fa-rss"></i>
-      </a>
-    </li>
-  </ul>
+<div class="">
+  <img class="ui middle aligned small circular image" src="{{ site.img_url }}" height="128px">
+  <h2 class="ui header">{{ site.author | default: "AUTHOR" }}
+    <div class="sub header">{{ site.sub_title | default: "Developer"}}</div>
+  </h2>
+  <div class="ui compact icon menu social">
+    <a class="item" href="https://github.com/{{ site.social_links.github }}">
+      <i class="github black icon"></i>
+    </a>
+    <a class="item" href="https://www.linkedin.com/in/{{ site.social_links.linkedin }}">
+      <i class="alternate linkedin blue icon"></i>
+    </a>
+    <a class="item" href="{{ site.social_links.rss }}">
+      <i class="rss orange icon"></i>
+    </a>
+  </div>
 </div>

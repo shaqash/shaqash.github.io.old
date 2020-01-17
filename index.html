@@ -1,0 +1,47 @@
+---
+layout: page
+title: Home
+---
+{%- if site.posts.size > 0 -%}
+<h2 name="posts" class="ui header">RECENT POSTS
+  <div class="sub header">
+    <p>
+      <a href="/archive">Archive</a>
+      /
+      <a href="{{ 'feed.xml' | relative_url }}">
+        <span>Subscribe</span>
+        <i class="icon rss" style="color: orange;"></i>
+      </a>
+    </p>
+  </div>
+</h2>
+{%- assign date_format = "%b %-d, %Y" -%}
+<div class="ui stacked segments">
+  {% for post in site.posts limit: 3 %}
+  <div class="ui segment" style="text-align: {{ post.align }}; direction: {{ post.direction }}">
+    <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>
+      <div class="content">
+        <h3 class="ui header">
+          {{ post.title }}
+          <div class="sub header">
+            {{ post.date | date: date_format }}
+          </div>
+        </h3>
+        <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+        <div class="ui blue labels">
+          {%- for tag in post.categories -%}
+          <div class="ui label">
+            {{tag}}
+          </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{%- endif -%}
+
+<div id="github"></div>
+<script src="assets/js/renderer.js"></script>
+<script src="assets/js/github.js"></script>

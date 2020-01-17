@@ -2,10 +2,9 @@
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {%- include head.html -%}
 <body>
-  <main class="container mt-5">
-    <div>
-      {{content}}
-    </div>
-  </main>
+  <div class="ui very padded container"
+    style="margin-top: 35px;">
+    {{content}}
+  </div>
 </body>
 </html>

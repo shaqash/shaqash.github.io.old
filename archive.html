@@ -1,0 +1,48 @@
+---
+layout: page
+title: Archive
+permalink: /archive/
+---
+<h3 class="header">
+  <a href="/">
+    <i class="home icon"></i>
+    Home
+  </a>
+</h3>
+
+<h1 class="ui header">Archive / ארכיון
+  <div class="sub header">
+    <a href="{{ 'feed.xml' | relative_url }}">
+      Subscribe to RSS
+      <i class="rss orange icon"></i>
+    </a>
+  </div>
+</h1>
+
+{%- if site.posts.size > 0 -%}
+{%- assign date_format = "%b %-d, %Y" -%}
+{% for post in site.posts %}
+<div class="ui vertical segment" style="text-align: {{ post.align }}; direction: {{ post.direction }}">
+  <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>
+    <div class="content">
+      <h3 class="ui header">
+        {{ post.title }}
+        <div class="sub header">
+          {{ post.date | date: date_format }}
+        </div>
+      </h3>
+      <p>{{ post.excerpt | strip_html | truncate: 250 }}</p>
+      <div class="ui blue labels">
+        {%- for tag in post.categories -%}
+        <div class="ui label">
+          {{tag}}
+        </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </a>
+</div>
+{% endfor %}
+{% else %}
+<p>Nothing to display :/</p>
+{%- endif -%}

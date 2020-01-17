@@ -1,5 +1,5 @@
 ---
-categories: blog
+categories: [blog]
 title: Welcome
 author: Shaked Ashkenazi
 date: 4/10/2019 20:18
