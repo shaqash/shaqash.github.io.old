@@ -3,12 +3,6 @@ layout: page
 title: Archive
 permalink: /archive/
 ---
-<!-- <h3 class="header">
-  <a href="/">
-    <i class="home icon"></i>
-    Home
-  </a>
-</h3> -->
 <div class="ui large breadcrumb">
   <a class="section" href="/"><i class="home icon"></i>Home</a>
 </div>
@@ -36,7 +30,7 @@ permalink: /archive/
       </h3>
       <p>{{ post.excerpt | strip_html | truncate: 250 }}</p>
       <div class="ui blue labels">
-        {%- for tag in post.categories -%}
+        {%- for tag in post.tags -%}
         <div class="ui label">
           {{tag}}
         </div>

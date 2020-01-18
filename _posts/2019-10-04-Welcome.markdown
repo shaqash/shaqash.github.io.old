@@ -1,9 +1,0 @@
----
-categories: [blog]
-title: Welcome
-author: Shaked Ashkenazi
-date: 4/10/2019 20:18
----
-
-Welcome to my website.
-This is the first article in my blog

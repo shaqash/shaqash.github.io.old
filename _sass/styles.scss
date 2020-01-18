@@ -15,4 +15,6 @@ pre {
   text-align: left !important;
   direction: ltr !important;
   padding: 1rem;
+  overflow: auto;
+  overflow-y: hidden;
 }

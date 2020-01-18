@@ -3,9 +3,9 @@ layout: page
 ---
 <div class="ui large breadcrumb">
   <a class="section" href="/"><i class="home icon"></i>Home</a>
-  {%- for tag in page.categories -%}
+  {%- for category in page.categories -%}
   <div class="divider"> / </div>
-  <a class="section">{{tag}}</a>
+  <a class="section">{{category}}</a>
   {%- endfor -%}
 </div>
 <article 
