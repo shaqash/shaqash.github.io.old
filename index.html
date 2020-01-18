@@ -18,7 +18,7 @@ title: Home
 {%- assign date_format = "%b %-d, %Y" -%}
 <div class="ui stacked segments">
   {% for post in site.posts limit: 3 %}
-  <div class="ui segment" style="text-align: {{ post.align }}; direction: {{ post.direction }}">
+  <div class="ui segment hover-gray" style="text-align: {{ post.align }}; direction: {{ post.direction }}">
     <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>
       <div class="content">
         <h3 class="ui header">
@@ -29,7 +29,7 @@ title: Home
         </h3>
         <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
         <div class="ui blue labels">
-          {%- for tag in post.categories -%}
+          {%- for tag in post.tags -%}
           <div class="ui label">
             {{tag}}
           </div>

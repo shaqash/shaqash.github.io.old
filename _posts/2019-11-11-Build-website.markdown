@@ -1,5 +1,6 @@
 ---
 categories: [websites, jekyll, קדימון]
+tags: [Jekyll, websites]
 title: בניית אתר jekyll/github pages
 author: Shaked Ashkenazi
 date: 11/10/2019

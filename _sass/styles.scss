@@ -7,6 +7,10 @@ body {
   // font-weight: 350;
 }
 
+.ui.segment.hover-gray:hover {
+  background-color: #f7f7f7 !important;
+}
+
 pre {
   text-align: left !important;
   direction: ltr !important;

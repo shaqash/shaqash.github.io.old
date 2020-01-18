@@ -17,13 +17,12 @@ function makeItem(item) {
       </div>
     </div>
     <div class="extra content">
-      <div class="ui basic fluid button">
-        <a href="${item.url}" 
-          class=""
-        >
-          Check it out!
-        </a>
-      </div>
+      <a
+        href="${item.url}" 
+        class="ui basic fluid button"
+      >
+        Check it out!
+      </a>
     </div>
   </div>
   `
