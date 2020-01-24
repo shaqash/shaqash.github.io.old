@@ -42,8 +42,8 @@ async function renderGithub() {
   const loader = document.getElementById('githubLoader');
   const userdata = await fetchUserData();
   const header = makeHeader('GITHUB', `
-    Public repos count: ${userdata.public_repos}
-    Public gists count: ${userdata.public_gists}
+    <b>${userdata.public_repos}</b> <small>REPOS</small>
+    <b>${userdata.public_gists}</b> <small>GISTS</small>
   `);
   const projects = await fetchProjects();
   const list = makeList(projects);

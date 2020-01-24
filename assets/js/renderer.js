@@ -35,9 +35,11 @@ function makeLanguageIcon(language) {
     case 'python':
       return 'python blue icon';
     case 'Shell':
-      return 'terminal black icon';
+      return 'linux black icon';
     case 'Ruby':
       return 'gem red icon';
+    case 'CSS':
+      return 'css3 alternate blue icon'
     default:
       return '';
   }
