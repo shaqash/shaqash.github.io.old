@@ -39,6 +39,7 @@ async function fetchUserData() {
 
 async function renderGithub() {
   const section = document.getElementById('github');
+  const loader = document.getElementById('githubLoader');
   const userdata = await fetchUserData();
   const header = makeHeader('GITHUB', `
     Public repos count: ${userdata.public_repos}
@@ -48,6 +49,7 @@ async function renderGithub() {
   const list = makeList(projects);
   section.insertAdjacentHTML('beforebegin', header);
   section.insertAdjacentHTML('afterbegin', list);
+  loader.classList.remove('active');
 }
 
 renderGithub();

@@ -1,7 +1,7 @@
 ---
 categories: [websites]
 tags: [Jekyll, websites]
-title: בניית אתר jekyll/github pages
+title: בניית האתר
 author: Shaked Ashkenazi
 date: 11/10/2019
 direction: rtl
